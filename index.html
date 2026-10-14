@@ -997,8 +997,7 @@
       const r = card.getBoundingClientRect();
       lx = (e.clientX - r.left) / r.width - 0.5; ly = (e.clientY - r.top) / r.height - 0.5;
       card.style.setProperty('--mx', (e.clientX - r.left) + 'px');
-      card.style.setProperty('--my', (e.clientY - r.top) + 'px');
-      card.classList.remove('resetting'); card.classList.add('tilting');
+      card.style.setProperty('--my', (e.clientY - r.top) + 'px');      card.classList.remove('resetting'); card.classList.add('tilting');
       if(!ticking){
         requestAnimationFrame(() => {
           card.style.transform = `translate(-6px,-6px) rotateX(${ly * -7}deg) rotateY(${lx * 7}deg)`;
